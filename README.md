@@ -9,7 +9,7 @@ Some data about user will be located in C:/Program Files/ZIPcord, but i will mak
 
 ##**Road map:** <br/>
 Optomization of client for low latency and perfomance<br/>
-<ins>Server on pc of any user with out ddns and white IPv4<ins><br/>
+<ins>Server on pc of any user with out ddns and white IPv4<br/><ins>
 Include NSIS installation<br/>
 Data about user on his PC<br/>
 Support of Russion lang<br/>
