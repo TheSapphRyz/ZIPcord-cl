@@ -13,7 +13,7 @@ Server on pc of any user with out ddns and white IPv4<br/>
 Include NSIS installation<br/>
 Data about user on his PC<br/>
 Support of Russion lang<br/>
-Volume control im voice chat<br/>
+Volume control in voice chat<br/>
 Add Servers (like in Discord) and Private chats<br/>
 May be some activity (like mini games in Discord)<br/>
 May be some custom interface colors <br/>
