@@ -1,5 +1,8 @@
 # ZIPcord-cl
 
+![image](https://github.com/user-attachments/assets/73cea5ec-bd60-48ef-92af-389979f6faea)
+
+
 ZIPcord is the test version of Discord clone writen in C++.<br/>
 I used Dear ImGui, Port Audio and winsock2 (tcp)<br/>
 
