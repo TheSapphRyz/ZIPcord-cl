@@ -22,4 +22,6 @@ May be some custom interface colors <br/>
 Add quoting text and replies (like in Telegram)<br/>
 Add Icons for users and more account settings<br/>
 Design for messages<br/>
-✅NSIS installation
+✅NSIS installation<br/>
+Registration and auth<br/>
+Notification for chat and another things
