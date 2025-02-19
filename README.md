@@ -1,4 +1,4 @@
-# ZIPcord-cl
+### ZIPcord-cl
 
 ![image](https://github.com/user-attachments/assets/73cea5ec-bd60-48ef-92af-389979f6faea)
 
@@ -24,4 +24,5 @@ Add Icons for users and more account settings<br/>
 Design for messages<br/>
 ✅NSIS installation<br/>
 Registration and auth<br/>
-Notification for chat and another things
+Images, gifs, videos in chat<br/>
+Notification for chat and another things<br/>
