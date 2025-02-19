@@ -1,4 +1,4 @@
-### ZIPcord-cl
+# ZIPcord-cl
 
 ![image](https://github.com/user-attachments/assets/73cea5ec-bd60-48ef-92af-389979f6faea)
 
