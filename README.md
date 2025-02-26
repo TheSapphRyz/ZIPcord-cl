@@ -13,7 +13,7 @@ Some data about user will be located in C:/Program Files/ZIPcord, but i will mak
 ## Road map:
 Optomization of client for low latency and perfomance<br/>
 Server on pc of any user with out ddns and white IPv4<br/>
-Data about user on his PC<br/>
+✅Data about user on his PC<br/>
 Support of Russion lang<br/>
 Volume control in voice chat<br/>
 Add Servers (like in Discord) and Private chats<br/>
