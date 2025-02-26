@@ -26,3 +26,4 @@ Design for messages<br/>
 Registration and auth<br/>
 Images, gifs, videos in chat<br/>
 Notification for chat and another things<br/>
+SoundCloud API in Voice and text chats<br/>
