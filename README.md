@@ -18,7 +18,7 @@ Support of Russion lang<br/>
 Volume control in voice chat<br/>
 Add Servers (like in Discord) and Private chats<br/>
 May be some activity (like mini games in Discord)<br/>
-May be some custom interface colors <br/>
+✅May be some custom interface colors <br/>
 Add quoting text and replies (like in Telegram)<br/>
 Add Icons for users and more account settings<br/>
 ✅Design for messages<br/>
