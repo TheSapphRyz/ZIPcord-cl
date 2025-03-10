@@ -6,9 +6,7 @@
 ZIPcord is the test version of Discord clone writen in C++.<br/>
 I used Dear ImGui, Port Audio and winsock2 (tcp)<br/>
 
-I havent compile .exe with all fonts file yet, but it will be fixed in next updates by using NSIS.<br/>
-
-Some data about user will be located in C:/Program Files/ZIPcord, but i will make it later.<br/>
+Some data about user located in C:/Program Files/ZIPcord<br/>
 
 ## Road map:
 ✅Optomization of client for low latency and perfomance<br/>
