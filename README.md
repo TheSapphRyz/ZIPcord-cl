@@ -9,7 +9,7 @@ I used Dear ImGui, Port Audio and winsock2 (tcp)<br/>
 Some data about user located in C:/Program Files/ZIPcord<br/>
 
 ## Road map:
-✅Optomization of client for low latency and perfomance<br/>
+✅Optimization for client for low latency and perfomance<br/>
 Server on pc of any user with out ddns and white IPv4<br/>
 ✅Data about user on his PC<br/>
 Support of Russion lang<br/>
