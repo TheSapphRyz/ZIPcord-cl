@@ -10,7 +10,7 @@ Some data about user located in C:/Program Files/ZIPcord<br/>
 
 ## Road map:
 ✅Optimization for client for low latency and perfomance<br/>
-Server on pc of any user with out ddns and white IPv4<br/>
+Server on pc of any user with out ddns and white IPv4 or hamachi<br/>
 ✅Data about user on his PC<br/>
 Support of Russion lang<br/>
 Volume control in voice chat<br/>
@@ -24,4 +24,4 @@ Add Icons for users and more account settings<br/>
 ✅Registration and auth<br/>
 Images, gifs, videos in chat<br/>
 Notification for chat and another things<br/>
-SoundCloud API in Voice and text chats<br/>
+Music in Voice and text chats<br/>
