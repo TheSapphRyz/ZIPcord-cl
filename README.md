@@ -3,25 +3,31 @@
 ![image](https://github.com/user-attachments/assets/73cea5ec-bd60-48ef-92af-389979f6faea)
 
 
-ZIPcord is the test version of Discord clone writen in C++.<br/>
-I used Dear ImGui, Port Audio and winsock2 (tcp)<br/>
-
-Some data about user located in C:/Program Files/ZIPcord<br/>
+Zipcord - некий клон дискорда для друзей, написанный на C++ с использованием этих библиотек: Dear ImGui, Port Audio и winsock2 (tcp)<br/>
 
 ## Road map:
-✅Optimization for client for low latency and perfomance<br/>
-Server on pc of any user with out ddns and white IPv4 or hamachi<br/>
-✅Data about user on his PC<br/>
-Support of Russion lang<br/>
-Volume control in voice chat<br/>
-Add Servers (like in Discord) and Private chats<br/>
-May be some activity (like mini games in Discord)<br/>
-✅May be some custom interface colors <br/>
-Add quoting text and replies (like in Telegram)<br/>
-Add Icons for users and more account settings<br/>
-✅Design for messages<br/>
-✅NSIS installation<br/>
-✅Registration and auth<br/>
-Images, gifs, videos in chat<br/>
-Notification for chat and another things<br/>
-Music in Voice and text chats<br/>
+✅Оптимизация клиента<br/>
+Сервер без хамачи, впн и дднс<br/>
+✅Данные о пользователе на его же пк<br/>
+Поддержка русского языка<br/>
+Изменение громкости каждого из пользователей<br/>
+Сервера, как в дискорде, некие гиуппы и личные переписки<br/>
+Миниигры на подобие дискордовских<br/>
+✅Кастомные стили оформления<br/>
+Цитирование и ответы на сообщения, как в телеграме<br/>
+Аватарки для пользователей<br/>
+✅Дизайн сообщений<br/>
+✅NSIS установка<br/>
+✅Регистрация и авторизация<br/>
+Меда контент в чате<br/>
+Windows уведомления<br/>
+Беспланый саундпад в Zipcord<br/>
+
+## Как переустановить Zipcord?
+1) Зайдите в папку C:/Program Files/Zipcord/
+2) Скопируйте два файла: data.txt и chat.txt
+3) Откройте uninstall.exe и выполните удаление программы 
+4) Скачайте последнюю версию приложентя с этого репозитория->релизы
+5) Запустите setup.exe 
+6) Вставьте скопированные, в шаге 2, файлы в папку из шага 1
+7) запустите ярлык приложения через меню windows или из папки
