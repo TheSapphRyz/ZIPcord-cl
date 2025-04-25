@@ -207,6 +207,11 @@ void receive_messages() {
                         int id = received_json["id"];
                         chat_msgs.push_back({ message, sender, time, id });
                         msgs.push_back("[INF] Received chat message from " + sender + ": " + message);
+                        /*std::ofstream file2f("chat.txt", std::ios::app);
+                        if (file2f.is_open()) {
+                            file2f << id_message - 1 << "(-=S=-)-=S=-(-=S=-)" << sender << "(-=S=-)-=S=-(-=S=-)" << time << "(-=S=-)-=S=-(-=S=-)doc(-=S=-)-=S=-(-=S=-)" << message << std::endl;
+                            file2f.close();
+                        }*/
                         shouldRender = true;
                     }
                     else if (type == "voice_connect") {
@@ -250,7 +255,7 @@ void receive_messages() {
                             chat_msgs.push_back({ message, sender, time, id });
                             msgs.push_back("[INF] Received chat message from " + sender + ": " + message);
                             shouldRender = false;
-                        }                     
+                        }
                     }
                 }
             }
@@ -264,7 +269,7 @@ void receive_messages() {
                 short* audio = (short*)buffer.data();
                 size_t samples = bytes_received / sizeof(short);
                 for (size_t i = 0; i < samples && audioData.writePos < audioData.buffer.size(); ++i) {
-                    audioData.buffer[audioData.writePos] = audio[i] / 32767.0f; 
+                    audioData.buffer[audioData.writePos] = audio[i] / 32767.0f;
                     audioData.writePos = (audioData.writePos + 1) % audioData.buffer.size();
                 }
                 audioData.hasData = true;
@@ -318,13 +323,13 @@ void DrawMessageBox(const std::string& sender, const std::string& time, const st
     float x = d.width;
     float y = d.height;
     ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.137f, 0.153f, 0.165f, 1.0f));
-    ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 12.0f); 
+    ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 12.0f);
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(10, 10));
     std::string header = sender + "  " + time;
     ImVec2 hSize = ImGui::CalcTextSize(header.c_str(), nullptr, false, x * 0.54f);
-    ImVec2 textSize = ImGui::CalcTextSize(text.c_str(), nullptr, false, x * 0.54f); 
-    float minWidth = 100.0f; 
-    float maxWidth = x * 0.58f; 
+    ImVec2 textSize = ImGui::CalcTextSize(text.c_str(), nullptr, false, x * 0.54f);
+    float minWidth = 100.0f;
+    float maxWidth = x * 0.58f;
     float boxWidth;
     if (hSize.x >= textSize.x) {
         boxWidth = hSize.x + 20;
@@ -337,9 +342,9 @@ void DrawMessageBox(const std::string& sender, const std::string& time, const st
     ++id_message;
     std::string s = std::to_string(id_message);
     ImGui::BeginChild(s.c_str(), ImVec2(boxWidth, boxHeight), true, ImGuiWindowFlags_NoScrollbar);
-    ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), "%s", header.c_str()); 
-    ImGui::Separator(); 
-    ImGui::TextWrapped("%s", text.c_str()); 
+    ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), "%s", header.c_str());
+    ImGui::Separator();
+    ImGui::TextWrapped("%s", text.c_str());
     ImGui::EndChild();
     ImGui::PopStyleVar(2);
     ImGui::PopStyleColor();
@@ -389,7 +394,7 @@ float* test;
 std::map<std::string, ImVec4> th_da = { {"btn", ImVec4(0.322, 0.322, 0.322, 1.0f)}, {"window", ImVec4(0.173f, 0.184f, 0.2f, 1.0f)}, {"title", ImVec4(0.137f, 0.153f, 0.165f, 1.0f)}, {"border", ImVec4(0.137f, 0.153f, 0.165f, 1.0f)}, {"inputtext", ImVec4(0.322, 0.322, 0.322, 1.0)} }; // fix
 std::map<std::string, ImVec4> th_de = { {"btn", ImVec4(0.322, 0.322, 0.322, 1.0f)}, {"window", ImVec4(0.173f, 0.184f, 0.2f, 1.0f)}, {"title", ImVec4(0.137f, 0.153f, 0.165f, 1.0f)}, {"border", ImVec4(0.137f, 0.153f, 0.165f, 1.0f)}, {"inputtext", ImVec4(0.322, 0.322, 0.322, 1.0)} };
 std::map<std::string, ImVec4> th_li = { {"btn", ImVec4(0.941, 0.941, 0.941, 1.0f)}, {"window", ImVec4(1, 1, 1, 1.0f)}, {"title", ImVec4(1, 1, 1, 1.0f)}, {"border", ImVec4(0.984, 0.973, 1, 1.0f)}, {"inputtext", ImVec4(0.82, 0.82, 0.82, 1.0)}, {"text", ImVec4(0.0, 0.0, 0.0, 1.0f)} };
-std::map<std::string, ImVec4> th_x_ = { {"btn", ImVec4(0.302, 0.302, 0.302, 1.0f)}, {"window", ImVec4(0.0, 0.0, 0.0, 1.0f)}, {"title", ImVec4(0.271, 0.271, 0.271, 1.0f)}, {"border", ImVec4(1.0, 1.0, 1.0, 1.0f)}, {"inputtext", ImVec4(0.137, 0.161, 0.188, 1.0)}, {"text", ImVec4(0.0, 0.0, 0.0, 1.0f)}, {"btn_li", ImVec4(0.878, 0.878, 0.878, 1.0)}};
+std::map<std::string, ImVec4> th_x_ = { {"btn", ImVec4(0.302, 0.302, 0.302, 1.0f)}, {"window", ImVec4(0.0, 0.0, 0.0, 1.0f)}, {"title", ImVec4(0.271, 0.271, 0.271, 1.0f)}, {"border", ImVec4(1.0, 1.0, 1.0, 1.0f)}, {"inputtext", ImVec4(0.137, 0.161, 0.188, 1.0)}, {"text", ImVec4(0.0, 0.0, 0.0, 1.0f)}, {"btn_li", ImVec4(0.878, 0.878, 0.878, 1.0)} };
 std::map<std::string, ImVec4> th_rb = { {"btn", ImVec4(0.929, 0, 1, 1.0f)}, {"window", ImVec4(1, 0.325, 0.918, 1.0f)}, {"title", ImVec4(0.984, 0.757, 1, 1.0f)}, {"border", ImVec4(1, 0, 0.878, 1.0f)}, {"inputtext", ImVec4(0.788, 0.024, 0.718, 1.0)} };
 std::map<std::string, ImVec4> th_pu = { {"btn", ImVec4(0.518, 0.271, 0.91, 1.0f)}, {"window", ImVec4(0.455, 0, 0.62, 1.0f)}, {"title", ImVec4(0.827, 0.518, 0.941, 1.0f)}, {"border", ImVec4(0.392, 0.18, 0.471, 1.0f)}, {"inputtext", ImVec4(0.482, 0.255, 0.678, 1.0)} };
 
@@ -487,7 +492,7 @@ void settings_(HWND& hwnd) {
     ImGui::Text("Now: %s", theme_gl.c_str());
 
     if (ImGui::Button("Default", ImVec2(x * 0.15, y * 0.05))) {
-        theme_gl = "default";                                                                          
+        theme_gl = "default";
     }
     ImGui::SameLine();
     if (ImGui::Button("Dark", ImVec2(x * 0.15, y * 0.05))) {
@@ -504,14 +509,14 @@ void settings_(HWND& hwnd) {
         theme_gl = "rb";
     }
     ImGui::SameLine();
-    if (ImGui::Button("Purple", ImVec2(x*0.15, y*0.05))) {
+    if (ImGui::Button("Purple", ImVec2(x * 0.15, y * 0.05))) {
         theme_gl = "purple";
     }
     if (ImGui::Button("Custom", ImVec2(x * 0.306, y * 0.05))) {
         shouldRender = true;
     }
 
-    ImGui::SetCursorPosY(ImGui::GetWindowHeight() - y*0.06);
+    ImGui::SetCursorPosY(ImGui::GetWindowHeight() - y * 0.06);
     if (ImGui::Button("Save", ImVec2(x * 0.30, y * 0.05))) {
         std::ofstream f("data.txt");
         if (f.is_open()) {
@@ -540,7 +545,7 @@ void v_chat(HWND& hwnd, PaStream* stream) {
     ImGui::SetWindowPos(ImVec2(0, 0));
 
     if (log_inf == false) {
-        msgs.push_back("[INF] init");   
+        msgs.push_back("[INF] init");
         log_inf = true;
         shouldRender = true;
     }
@@ -565,7 +570,7 @@ void v_chat(HWND& hwnd, PaStream* stream) {
                 json request = { {"type", "voice_connect"}, {"message", name} };
                 std::string request_str = request.dump();
                 send(client_socket, request_str.c_str(), request_str.size(), 0);
-                json request1 = {{"type", "get_voice_clients"} };
+                json request1 = { {"type", "get_voice_clients"} };
                 send(client_socket, request1.dump().c_str(), request1.dump().size(), 0);
                 if (stream && Pa_IsStreamStopped(stream)) {
                     PaError err = Pa_StartStream(stream);
@@ -676,7 +681,7 @@ void v_chat(HWND& hwnd, PaStream* stream) {
         log_inf2 = true;
         shouldRender = true;
     }
-    ImGui::BeginChild("ChatScroll", ImVec2(0, windowSize.y - 80), false, ImGuiWindowFlags_AlwaysVerticalScrollbar);
+    ImGui::BeginChild("ChatScroll", ImVec2(0, windowSize.y - 100), false, ImGuiWindowFlags_AlwaysVerticalScrollbar);
     if (!chat_msgs.empty()) {
         for (const auto& msg : chat_msgs) {
             DrawMessageBox(msg.sender, msg.time, msg.text, hwnd);
@@ -700,11 +705,16 @@ void v_chat(HWND& hwnd, PaStream* stream) {
             GetSystemTime(&st);
             char t[80] = "";
             sprintf_s(t, "%d:%d", st.wHour + 3, st.wMinute);
-            json request = { {"type", "chat_msg"}, {"username", name}, {"message", std::string(buf)}, {"time", std::string(t)}};
+            json request = { {"type", "chat_msg"}, {"username", name}, {"message", std::string(buf)}, {"time", std::string(t)} };
             send(client_socket, request.dump().c_str(), request.dump().size(), 0);
             ++id_message;
-            chat_msgs.push_back({std::string(buf), name, std::string(t), id_message});
+            chat_msgs.push_back({ std::string(buf), name, std::string(t), id_message });
             msgs.push_back("[INF] Message sent: " + std::string(buf));
+            /*std::ofstream file2f("chat.txt", std::ios::app);
+            if (file2f.is_open()) {
+                file2f << id_message - 1 << "(-=S=-)-=S=-(-=S=-)" << name << "(-=S=-)-=S=-(-=S=-)" << std::string(t) << "(-=S=-)-=S=-(-=S=-)doc(-=S=-)-=S=-(-=S=-)" << std::string(buf) << std::endl;
+                file2f.close();
+            }*/
             buf[0] = '\0';
             autoScroll = true;
             ImGui::SetKeyboardFocusHere(-1);
@@ -805,7 +815,7 @@ void login_false(HWND& hwnd) {
     }
     ImGui::SetCursorPosY(y * 0.4);
     if (ImGui::Button("Done", ImVec2(x * 0.195, y * 0.05))) {
-        
+
         std::ofstream f("data.txt");
         if (f.is_open()) {
             f << std::string(b_us) + "-=S=-" + std::string(p) + "-=S=-pc_name-=S=-base-=S=-no";
@@ -814,7 +824,7 @@ void login_false(HWND& hwnd) {
             login = true;
             shouldRender = true;
         }
-        json r = {{"type", "add_user"}, {"username", std::string(b_us)}, {"password", std::string(p)}};
+        json r = { {"type", "add_user"}, {"username", std::string(b_us)}, {"password", std::string(p)} };
         send(client_socket, r.dump().c_str(), r.dump().size(), 0);
     }
     ImGui::PopStyleColor();
@@ -908,7 +918,61 @@ int main(int, char**) {
 
     json r = { {"type", "id_msg_last"} };
     send(client_socket, r.dump().c_str(), r.dump().size(), 0);
-    r = { {"type", "get_msgs"}, {"message", "0-=S=-1000"}};
+    r = { {"type", "get_msgs"}, {"message", "0-=S=-1000"} };
+
+    std::ifstream filef("chat.txt");
+    if (filef.is_open()) {
+        std::string line;
+        while (std::getline(filef, line)) {
+            size_t pos = 0;
+            std::vector<std::string> parts;
+            while ((pos = line.find("(-=S=-)-=S=-(-=S=-)")) != std::string::npos) {
+                parts.push_back(line.substr(0, pos));
+                line.erase(0, pos + 19);
+            }
+            parts.push_back(line);
+            if (parts.size() == 4) {
+                int id = std::stoi(parts[0]);
+                std::string sender = parts[1];
+                std::string time = parts[2];
+                std::string text = parts[3];
+                id_message = id;
+                Message m;
+                m.sender = sender;
+                m.time = time;
+                m.text = text;
+                m.id = id;
+                chat_msgs.push_back(m);
+            }
+            else {
+                printf("error");
+            }
+            /*else if (parts.size() >= 5) {
+                int id = std::stoi(parts[0]);
+                Message m;
+                m.sender = parts[1];
+                m.time = parts[2];
+                m.text = parts[4];
+                m.id = id;
+                if (parts[3] == "doc") {
+                    m.doc = (const unsigned char*)parts[5].c_str();
+                    m.is_doc = true;
+                }
+                else if (parts[3] == "img") {
+                    ID3D10ShaderResourceView* t1 = CreateTextureFromMemory(g_pd3dDevice, base64_decode(parts[5]), std::stoull(parts[7]));
+                    m.texture = t1;
+                    m.is_image = true;
+                    m.width = 350;
+                    m.height = 200;
+                }*/
+        }
+        filef.close();
+    }
+    else {
+        std::cerr << "Failed to open chat_history.txt for reading!" << std::endl;
+    }
+
+
     //send(client_socket, r.dump().c_str(), r.dump().size(), 0); // uncomment that if u want to get all messages from 0 to 1000 u can edit it in line 906 receive_messages doesnt realy process messages, so, its unhelpful and no i dont need it, but want to fix it
 
     IMGUI_CHECKVERSION();
@@ -1012,6 +1076,13 @@ int main(int, char**) {
         closesocket(client_socket);
     }
     WSACleanup();
+
+    std::ofstream fff("data.txt");
+    if (fff.is_open()) {
+        fff << name << "-=S=-" << passw << "-=S=-pc_name-=S=-" << theme_gl << "-=S=-no-=S=-" << std::to_string(id_message);
+        fff.close();
+    }
+
     return 0;
 }
 
