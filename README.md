@@ -24,7 +24,7 @@ Windows уведомления<br/>
 Беспланый саундпад в Zipcord<br/>
 Приложение для андроида<br/>
 Стикеры и эмодзи<br/>
-KCrypt
+✅KCrypt
 
 ## Как переустановить Zipcord?
 1) Зайдите в папку C:/Program Files/Zipcord/
